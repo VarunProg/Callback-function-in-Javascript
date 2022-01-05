@@ -1,5 +1,6 @@
-function x() {
+function x(y) {
     console.log("x called");
+    y();
 }
 
 function y() {
