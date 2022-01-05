@@ -5,4 +5,4 @@ function x() {
 function y() {
     console.log("y called");
 }
-x();
+x(y);
