@@ -9,7 +9,7 @@ some of the examples of synchronous callbacks functions are map, foreach, reduce
 why callback?
 let's suppose we are fetching data from server and it takes only 2 seconds to display the data, now we want to insert some values into the data and it takes 5 seconds to insert.
 so in this case what will happen values will be inserted to the database but will not be displayed because data takes only 2 seconds to fetch records  but to insert values it takes 5 seconds.
-so what we can do in this case what we can do we can pass a function fetchRecords() as a callback function into insertData() function, now it will be upto function insertData when it wants to call function fetchRecords.
+so what we can do in this case, we  can pass a function fetchRecords() as a callback function into insertData() function, now it will be upto function insertData when it wants to call function fetchRecords.
 Note: 
 function fetchRecords() only takes 2 seconds to fetch records from database
 function insertData() takes 5 seconds to insert the data
