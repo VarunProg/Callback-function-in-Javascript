@@ -25,5 +25,7 @@ function fetchRecords() {
             str += `<li>${student.language}</li>`
         });
         document.getElementById("studentData").innerHTML = str;
+        console.log(str)
     }, 2000);
 }
+fetchRecords();
