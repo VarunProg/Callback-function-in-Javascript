@@ -7,3 +7,6 @@ function y() {
     console.log("y called");
 }
 x(y); // function x takes function y as an argument 
+
+
+// second example of callback function  real use case
