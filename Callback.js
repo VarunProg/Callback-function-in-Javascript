@@ -18,3 +18,12 @@ const students =
         { name: "Varun", language: "javascript" },
         { name: "Anurag", language: "python" }
     ];
+function fetchRecords() {
+    let str = "";
+    setTimeout(() => {
+        students.forEach(student => {
+            str += `<li>${student.language}</li>`
+        });
+        document.getElementById("studentData").innerHTML = str;
+    }, 2000);
+}
