@@ -10,3 +10,11 @@ x(y); // function x takes function y as an argument
 
 
 // second example of callback function  real use case
+
+// let's pretend response is coming from server
+
+const students =
+    [
+        { name: "Varun", language: "javascript" },
+        { name: "Anurag", language: "python" }
+    ];
