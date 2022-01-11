@@ -13,7 +13,7 @@ so what we can do in this case, we  can pass a function fetchRecords() as a call
 Note: 
 function fetchRecords() only takes 2 seconds to fetch records from database\
 function insertData() takes 5 seconds to insert the data \
-Output: if we pass fetchRecords function into insertData function so now first it will insert values then will display the records.\
+Output: if we pass fetchRecords function into insertData function so now first it will insert values then will display the records.
 
 // let's pretend response is coming from server
 
