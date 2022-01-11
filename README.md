@@ -11,6 +11,41 @@ let's suppose we are fetching data from server and it takes only 2 seconds to di
 so in this case what will happen values will be inserted to the database but will not be displayed because data takes only 2 seconds to fetch records  but to insert values it takes 5 seconds.\
 so what we can do in this case, we  can pass a function fetchRecords() as a callback function into insertData() function, now it will be upto function insertData() when it wants to call function fetchRecords.
 Note: 
-function fetchRecords() only takes 2 seconds to fetch records from database
-function insertData() takes 5 seconds to insert the data
-Output: if we pass fetchRecords function into insertData function so now first it will insert values then will display the records.
+function fetchRecords() only takes 2 seconds to fetch records from database\
+function insertData() takes 5 seconds to insert the data \
+Output: if we pass fetchRecords function into insertData function so now first it will insert values then will display the records.\
+
+// let's pretend response is coming from server
+
+const students = \
+    [ \
+        { name: "Varun", language: "javascript" }, \
+        { name: "Anurag", language: "python" } \
+    ];
+
+//created fetchRecords function which fetches the recodrs in 2 seconds and display the records \
+function fetchRecords() { \
+    let str = "";\
+    setTimeout(() => { \
+        students.forEach(student => { \
+            str += `<li>${student.language}</li>`\
+        });\
+        document.getElementById("studentData").innerHTML = str;
+
+    }, 2000);
+}
+// fetchRecords();
+
+// now we want to insert values of one more student into this data that will take 5 seconds to insert data
+
+function insertData(newStudentData, fetchRecords) {\
+    setTimeout(() => {\
+        // inserting new studnet record to to dataBase\
+        students.push(newStudentData);\
+        fetchRecords(); // callback function called inside the insertData function\
+    }, 5000);
+
+}\
+let newStudentData = { name: "Haadi", language: "PHP" }; // new studnet record
+
+insertData(newStudentData, fetchRecords); // passed fetch record function as an argument of insertData which is callback function
